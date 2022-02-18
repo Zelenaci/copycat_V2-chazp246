@@ -175,6 +175,7 @@ class Application(tk.Tk):
     
 
     def ingest(self):
+        self.bar["value"] = 0
         self.base_folder = self.var_base_folder.get()
         self.sub_folder = self.var_sub_folder.get()
         self.external_folder = self.var_external_folder.get()
@@ -210,7 +211,7 @@ class Application(tk.Tk):
                 time.sleep(1)
             except:
                 print("cosi") 
-
+        self.bar["value"] = 100
         
         if self.n_files > 0 and self.smazat == 1:
             shutil.rmtree(self.external_folder)
