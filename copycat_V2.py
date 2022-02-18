@@ -1,4 +1,3 @@
-from distutils.log import error
 import json
 import os
 import shutil
@@ -9,7 +8,7 @@ from os.path import basename, splitext
 import time
 import threading
 from tkinter import ttk
-from turtle import color, width
+
 
 class Application(tk.Tk):
     name = basename(splitext(basename(__file__.capitalize()))[0])
@@ -21,8 +20,6 @@ class Application(tk.Tk):
         self.title(self.name)
         self.bind("<Escape>", self.quit)
         self.protocol("WM_DELETE_WINDOW", self.quit)
- 
-        #dodělat UI
 
         self.var_base_folder = tk.StringVar()
         self.var_sub_folder = tk.StringVar()
